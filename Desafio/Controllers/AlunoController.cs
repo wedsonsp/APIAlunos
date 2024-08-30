@@ -51,7 +51,7 @@ namespace Desafio.Controllers
             }
 
             // Log para verificar o objeto aluno recebido
-            Console.WriteLine($"Aluno recebido: {aluno.Nome}, {aluno.Idade}");
+            Console.WriteLine($"Aluno recebido : {aluno.Nome}, {aluno.Idade}");
 
             var newAluno = await _alunoRepository.Create(aluno);
             return CreatedAtAction(nameof(GetAluno), new { id = newAluno.Id }, newAluno);
