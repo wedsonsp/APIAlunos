@@ -36,6 +36,6 @@ namespace Desafio.Model
         [Required(ErrorMessage = "A sala é obrigatória.")]
         [StringLength(50, ErrorMessage = "O nome da sala não pode ter mais de 50 caracteres.")]
         [JsonPropertyName("sala")]
-        public string Sala { get; set; }
+        public int Sala { get; set; }
     }
 }
