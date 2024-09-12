@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Configurações de serviços
 builder.Services.AddDbContext<AlunoContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoSqlServerAlunos"));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("ConexaoPostgres"));
 });
 
 builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();

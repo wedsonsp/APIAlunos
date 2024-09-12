@@ -136,3 +136,5 @@ C:\Users\wedson.souza\source\repos\Desafio\Desafio\obj\Debug\net8.0\Desafio.pdb
 C:\Users\wedson.souza\source\repos\Desafio\Desafio\obj\Debug\net8.0\Desafio.genruntimeconfig.cache
 C:\Users\wedson.souza\source\repos\Desafio\Desafio\obj\Debug\net8.0\ref\Desafio.dll
 C:\Users\wedson.souza\source\repos\Desafio\Desafio\obj\Debug\net8.0\Desafio.sourcelink.json
+C:\Users\wedson.souza\source\repos\Desafio\Desafio\bin\Debug\net8.0\Npgsql.dll
+C:\Users\wedson.souza\source\repos\Desafio\Desafio\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
