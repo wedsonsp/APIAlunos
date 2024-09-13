@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Desafio.Migrations
 {
     /// <inheritdoc />
-    public partial class Alunos : Migration
+    public partial class Alunos_Desafio : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,14 +15,14 @@ namespace Desafio.Migrations
                 name: "Alunos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
+                    Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Nome = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     Idade = table.Column<int>(type: "integer", nullable: false),
                     N1 = table.Column<double>(type: "double precision", nullable: false),
                     N2 = table.Column<double>(type: "double precision", nullable: false),
                     Professor = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    Sala = table.Column<int>(type: "integer", maxLength: 50, nullable: false)
+                    Sala = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {

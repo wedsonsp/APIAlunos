@@ -1,5 +1,4 @@
 ﻿using Desafio.Model;
-using Desafio.Repositories.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,14 +17,13 @@ namespace Desafio.Controllers
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Aluno>>> GetAlunos()
-        
         {
             var alunos = await _alunoRepository.Get();
             return Ok(alunos);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Aluno>> GetAluno(int id)
+        public async Task<ActionResult<Aluno>> GetAluno(long id) // Alterado para long
         {
             var aluno = await _alunoRepository.Get(id);
             if (aluno == null)
@@ -57,9 +55,8 @@ namespace Desafio.Controllers
             return CreatedAtAction(nameof(GetAluno), new { id = newAluno.Id }, newAluno);
         }
 
-
         [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int id)
+        public async Task<ActionResult> Delete(long id) // Alterado para long
         {
             var alunoToDelete = await _alunoRepository.Get(id);
             if (alunoToDelete == null)
@@ -70,7 +67,7 @@ namespace Desafio.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> PutAluno(int id, [FromBody] Aluno aluno)
+        public async Task<ActionResult> PutAluno(long id, [FromBody] Aluno aluno) // Alterado para long
         {
             // Verificar se o ID do corpo da requisição corresponde ao ID na URL
             if (id != aluno.Id)
@@ -107,7 +104,5 @@ namespace Desafio.Controllers
 
             return NoContent();
         }
-
     }
-
 }

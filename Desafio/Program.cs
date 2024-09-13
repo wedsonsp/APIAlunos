@@ -1,17 +1,25 @@
-using Desafio.Context;
-using Desafio.Repositories.Interface;
 using Desafio.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Configurações de serviços
+//builder.Services.AddDbContext<AlunoContext>(options =>
+//{
+//    options.UseNpgsql(builder.Configuration.GetConnectionString("ConexaoPostgres"));
+//});
+
+//var builder = WebApplication.CreateBuilder(args);
+
+// Configuração do Entity Framework Core para PostgreSQL
 builder.Services.AddDbContext<AlunoContext>(options =>
-{
-    options.UseNpgsql(builder.Configuration.GetConnectionString("ConexaoPostgres"));
-});
+    options.UseNpgsql(builder.Configuration.GetConnectionString("ConexaoPostgres")));
+
+//var app = builder.Build();
+
 
 builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
